@@ -49,7 +49,9 @@ const getAllWorkouts = (filterParams) => {
       }
       // Other if-statements will go here for different parameters
       return workouts;
-    } catch (error) {
+    } 
+    
+    catch (error) {
       throw { status: 500, message: error };
     }
   };
@@ -77,7 +79,7 @@ const createNewWorkout = (newWorkout) => {
             DB.workouts.push(newWorkout);
             saveToDatabase(DB);
             return newWorkout;
-            
+
         } catch (error) {
             throw { status: 500, message: error?.message || error };
         }
